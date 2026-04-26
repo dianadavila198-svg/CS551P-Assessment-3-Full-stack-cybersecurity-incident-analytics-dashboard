@@ -1,0 +1,27 @@
+# Python Environment (Dependencies and binaries)
+venv/
+.venv/
+env/
+bin/
+lib/
+include/
+
+# Python Cache (Temporary execution files)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating System Files (Desktop and editor metadata)
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Database Management
+# Excludes temporary transaction journals while keeping the database
+*.db-journal
+
+# Security and Credentials
+# Prevents exposure of secret keys and private configuration
+.env
