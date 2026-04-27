@@ -1,3 +1,6 @@
+#This file helps to keep the repository clean by preventing files such as venv/ folder or pycache from being uploaded to github
+#So Github doesnt track everything, and only the important files. 
+
 # Python Environment (Dependencies and binaries)
 venv/
 .venv/
@@ -21,7 +24,3 @@ Thumbs.db
 # Database Management
 # Excludes temporary transaction journals while keeping the database
 *.db-journal
-
-# Security and Credentials
-# Prevents exposure of secret keys and private configuration
-.env

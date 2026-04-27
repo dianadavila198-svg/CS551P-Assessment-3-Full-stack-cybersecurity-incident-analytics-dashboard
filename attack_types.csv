@@ -1,0 +1,121 @@
+Attack Type,Security Vulnerability Type,Defense Mechanism Used,Type_ID
+Phishing,Unpatched Software,VPN,1
+Ransomware,Unpatched Software,Firewall,2
+Man-in-the-Middle,Weak Passwords,VPN,3
+Ransomware,Social Engineering,AI-based Detection,4
+Man-in-the-Middle,Social Engineering,VPN,5
+Man-in-the-Middle,Social Engineering,Antivirus,6
+DDoS,Unpatched Software,VPN,7
+SQL Injection,Social Engineering,Antivirus,8
+DDoS,Unpatched Software,Firewall,9
+Phishing,Zero-day,VPN,10
+SQL Injection,Unpatched Software,AI-based Detection,11
+Ransomware,Zero-day,Firewall,12
+DDoS,Unpatched Software,AI-based Detection,13
+DDoS,Social Engineering,Encryption,14
+Phishing,Zero-day,Encryption,15
+Man-in-the-Middle,Unpatched Software,AI-based Detection,16
+Malware,Social Engineering,Firewall,17
+DDoS,Social Engineering,AI-based Detection,18
+Ransomware,Weak Passwords,Antivirus,19
+Ransomware,Social Engineering,VPN,20
+Phishing,Weak Passwords,Antivirus,21
+DDoS,Social Engineering,VPN,22
+Phishing,Zero-day,AI-based Detection,23
+Malware,Unpatched Software,VPN,24
+Ransomware,Unpatched Software,Encryption,25
+Malware,Social Engineering,Antivirus,26
+DDoS,Zero-day,Encryption,27
+SQL Injection,Social Engineering,AI-based Detection,28
+Malware,Zero-day,AI-based Detection,29
+SQL Injection,Unpatched Software,Encryption,30
+Phishing,Zero-day,Antivirus,31
+Phishing,Weak Passwords,VPN,32
+Man-in-the-Middle,Zero-day,Firewall,33
+DDoS,Weak Passwords,AI-based Detection,34
+DDoS,Zero-day,AI-based Detection,35
+SQL Injection,Zero-day,VPN,36
+Man-in-the-Middle,Unpatched Software,Encryption,37
+DDoS,Zero-day,VPN,38
+DDoS,Weak Passwords,Antivirus,39
+Malware,Weak Passwords,AI-based Detection,40
+SQL Injection,Unpatched Software,Antivirus,41
+Malware,Unpatched Software,Antivirus,42
+Phishing,Weak Passwords,AI-based Detection,43
+Phishing,Social Engineering,Encryption,44
+Man-in-the-Middle,Zero-day,AI-based Detection,45
+Malware,Weak Passwords,Antivirus,46
+Phishing,Social Engineering,VPN,47
+Phishing,Zero-day,Firewall,48
+DDoS,Social Engineering,Firewall,49
+Malware,Zero-day,Firewall,50
+Malware,Weak Passwords,Encryption,51
+Man-in-the-Middle,Weak Passwords,Antivirus,52
+Phishing,Unpatched Software,Firewall,53
+Ransomware,Social Engineering,Firewall,54
+Phishing,Unpatched Software,Antivirus,55
+Ransomware,Unpatched Software,VPN,56
+Phishing,Unpatched Software,Encryption,57
+SQL Injection,Social Engineering,Firewall,58
+Malware,Zero-day,Encryption,59
+DDoS,Weak Passwords,Encryption,60
+Malware,Social Engineering,AI-based Detection,61
+Man-in-the-Middle,Social Engineering,AI-based Detection,62
+DDoS,Unpatched Software,Antivirus,63
+SQL Injection,Weak Passwords,Encryption,64
+SQL Injection,Unpatched Software,Firewall,65
+Man-in-the-Middle,Unpatched Software,Antivirus,66
+Malware,Unpatched Software,AI-based Detection,67
+Ransomware,Weak Passwords,Firewall,68
+Phishing,Social Engineering,Firewall,69
+Malware,Unpatched Software,Firewall,70
+Ransomware,Unpatched Software,Antivirus,71
+SQL Injection,Weak Passwords,Antivirus,72
+Man-in-the-Middle,Social Engineering,Encryption,73
+Malware,Social Engineering,VPN,74
+Phishing,Weak Passwords,Firewall,75
+Malware,Social Engineering,Encryption,76
+Man-in-the-Middle,Unpatched Software,VPN,77
+Man-in-the-Middle,Unpatched Software,Firewall,78
+DDoS,Zero-day,Antivirus,79
+Man-in-the-Middle,Zero-day,Antivirus,80
+SQL Injection,Social Engineering,Encryption,81
+DDoS,Unpatched Software,Encryption,82
+Ransomware,Social Engineering,Antivirus,83
+Man-in-the-Middle,Zero-day,VPN,84
+Phishing,Unpatched Software,AI-based Detection,85
+Malware,Zero-day,Antivirus,86
+Ransomware,Unpatched Software,AI-based Detection,87
+Ransomware,Zero-day,Encryption,88
+SQL Injection,Zero-day,Antivirus,89
+DDoS,Weak Passwords,VPN,90
+Ransomware,Zero-day,VPN,91
+Malware,Zero-day,VPN,92
+Malware,Unpatched Software,Encryption,93
+Man-in-the-Middle,Social Engineering,Firewall,94
+Phishing,Weak Passwords,Encryption,95
+SQL Injection,Social Engineering,VPN,96
+DDoS,Weak Passwords,Firewall,97
+Malware,Weak Passwords,Firewall,98
+SQL Injection,Unpatched Software,VPN,99
+Ransomware,Weak Passwords,AI-based Detection,100
+Phishing,Social Engineering,AI-based Detection,101
+SQL Injection,Zero-day,Encryption,102
+Man-in-the-Middle,Zero-day,Encryption,103
+DDoS,Zero-day,Firewall,104
+Phishing,Social Engineering,Antivirus,105
+Ransomware,Zero-day,Antivirus,106
+SQL Injection,Weak Passwords,AI-based Detection,107
+Man-in-the-Middle,Weak Passwords,AI-based Detection,108
+Ransomware,Social Engineering,Encryption,109
+Ransomware,Weak Passwords,VPN,110
+SQL Injection,Zero-day,AI-based Detection,111
+DDoS,Social Engineering,Antivirus,112
+Man-in-the-Middle,Weak Passwords,Encryption,113
+Malware,Weak Passwords,VPN,114
+Ransomware,Zero-day,AI-based Detection,115
+Man-in-the-Middle,Weak Passwords,Firewall,116
+SQL Injection,Weak Passwords,VPN,117
+SQL Injection,Weak Passwords,Firewall,118
+SQL Injection,Zero-day,Firewall,119
+Ransomware,Weak Passwords,Encryption,120
