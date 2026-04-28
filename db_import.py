@@ -1,17 +1,17 @@
-#Model: Handles automatic loading of open data into SQLite Database
+#Handles automatic loading of data set into the Database, with Pandas library support. 
 
 import pandas as pd
 import sqlite3
+#os library allows python to interact with the file system
 import os
 
 #1. ENVIRONMENT SETUP
-# Ensures the 'instance' folder exists
+# Ensures the 'instance' folder exists. This is especially for local files and configuration that shouldn´t 
+# be commited to version control.  
 if not os.path.exists('instance'):
     os.makedirs('instance')
 
 #2. DATABASE CONNECTION 
-#This creates or opens the SQLite file. Using instance for mananing local data. 
-#Connection to SQLite 
 conn = sqlite3.connect('instance/cyber_data.db')
 
 #3. DATA IMPORT AND TRANSFORMATION 
