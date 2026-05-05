@@ -1,10 +1,13 @@
 #This file helps to keep the repository clean by preventing files such as venv/ folder or pycache from being uploaded to github
 #So Github doesnt track everything, and only the important files. 
 
-# Python Environment (Dependencies and binaries)
+#Environment Secrets-Security 
+.env 
+
+# Virtual Environments
 venv/
 .venv/
-env/
+.env/
 bin/
 lib/
 include/
@@ -12,15 +15,14 @@ include/
 # Python Cache (Temporary execution files)
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
 # Operating System Files (Desktop and editor metadata)
 .DS_Store
-Thumbs.db
 .idea/
 .vscode/
 
 # Database Management
 # Excludes temporary transaction journals while keeping the database
+instance/
+*.db
 *.db-journal
