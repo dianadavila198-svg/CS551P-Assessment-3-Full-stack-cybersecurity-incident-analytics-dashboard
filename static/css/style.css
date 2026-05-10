@@ -35,6 +35,21 @@ centers content and prevents it from stretching on monitors--- */
     border-radius: 8px;   /* Rounds the corners of the main container */
 }
 
+/* --- Dashboard Header Styles --- */
+
+.container h1 {
+    font-size: 2.5rem;       /* Makes the title significantly bigger */
+    margin-bottom: 5px;      /* Small gap between title and subtitle */
+    color: #2c3e50;          
+}
+
+.container p {
+    font-size: 1.1rem;       /* Makes the subtitle bigger */
+    color: #7f8c8d;          /* A lighter grey for the subtitle */
+    margin-bottom: 30px;     /* separate text from the table */
+}
+
+
 /* --- DASHBOARD TABLE STYLING--- */
 table {
     width: 100%;          /* Makes the table stretch to fill the container */
@@ -107,3 +122,66 @@ a:hover {
     margin: 5px 0;              /* Adds a tiny gap between the lines of text */
 }
 
+/* --- NAVIGATION BAR --- 
+Acts as the housing for your Home link at the top of the page */
+.navbar {
+    background-color: #2c3e50; /* Dark blue background for the top bar */
+    padding: 10px 20px;        /* Space inside the bar */
+    margin-bottom: 10px;       /* Gap between bar and content */
+}
+
+/* --- HOME LINK ---  */
+.nav-logo {
+    display: inline-block;     
+    font-size: 1.5rem;         /* Makes it big and title-like */
+    font-weight: 800;          /* Bold brand look */
+    color: #ffffff !important; /* Forces it to be white so it pops on dark blue */
+    text-decoration: none;     /* Removes the blue link underline */
+    letter-spacing: 1px;
+}
+
+.nav-logo:hover {
+    color: #3498db !important; /* Turns bright blue when user point at it */
+}
+
+/* --- Global data analysis cards  ---  */
+/* Container for the Cards */
+.stats-container {
+    display: flex;            /* Forces cards into a row */
+    justify-content: space-between; /* Spreads them out evenly */
+    gap: 20px;               /* Space between the cards */
+    margin: 30px 0;          /* Space above and below the whole row */
+}
+
+/* Individual Boxes (The "Cards") */
+.stat-card {
+    flex: 1;                 /* Ensures all cards are exactly the same size */
+    background: #ffffff;      /* Clean white background */
+    padding: 25px;
+    border-radius: 12px;     /* roun corners */
+    text-align: center;
+    border: 1px solid #eef2f3; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease; 
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/*For titles */
+.stat-card h3 {
+    font-size: 0.85rem;
+    color: #7f8c8d;          
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* 5. The Large Numbers (The Data) */
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;        /* Thick, bold numbers like a real dashboard */
+    color: #2c3e50;          /* Matches your site's dark blue theme */
+}

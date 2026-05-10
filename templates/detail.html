@@ -21,17 +21,17 @@
         <hr>
 
         <h3>Technical Analysis</h3>
-        <p><strong>Attack Type:</strong>{{ incident ['Attack_Type'] }}</p>
-        <p><strong>Security Vunlerability:</strong>{{ incident ['Security_Vulnerability_Type'] }}</p>
-        <p><strong>Attack Source:</strong>{{ incident ['Attack_Source'] }}</p>
-        <p><strong>Defense Mechanism:</strong>{{ incident ['Defense_Mechanism_Used'] }}</p>
+        <p><strong>Attack Type:</strong> {{ incident ['Attack_Type'] }}</p>
+        <p><strong>Security Vunlerability:</strong> {{ incident ['Security_Vulnerability_Type'] }}</p>
+        <p><strong>Attack Source:</strong> {{ incident ['Attack_Source'] }}</p>
+        <p><strong>Defense Mechanism:</strong> {{ incident ['Defense_Mechanism_Used'] }}</p>
 
         <hr>
 
         <h3>Impact Assessment</h3>
-        <p><strong>Financial Loss:</strong>{{ incident ['Financial_Loss_inMillion$'] }} Million</p>
-        <p><strong>Users Affected:</strong>{{ incident ['Qty_Affected_Users'] }}</p>
-        <p><strong>Resolution Time:</strong>{{ incident ['Incident_Resolution_Time_inHours'] }}</p>
+        <p><strong>Financial Loss:</strong> ${{ incident ['Financial_Loss_inMillion$'] }} Million USD</p>
+        <p><strong>Users Affected:</strong> {{ incident ['Qty_Affected_Users'] }}</p>
+        <p><strong>Resolution Time:</strong> {{ incident ['Incident_Resolution_Time_inHours'] }}</p>
     </div>
 
 </div>

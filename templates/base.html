@@ -9,23 +9,24 @@
     <title>Cyber Incident Dashboard</title>
     </head>
     <body>
-        <nav>
-            <a href="/">Home</a>
+        <nav class="navbar">
+            <a href="/" class="nav-logo">Home</a>
         </nav>
 
-        <main>
-            <!--Opens where the specific page content will go -->
-            {% block content %}
+        <div class="container">
             <!--NINJA DELIMETERS-->
+            <!-- Opens where the specific page content will go -->
+            {% block content %}
             <!--Finish boundary for page content, (inheritance and scope). Ensuring modular integrity of the templates)  -->
             {% endblock %}
-        </main>
+        </div>
 
         <!-- More professional visualization of footer -->
         <footer class="site-footer">
             <div class="footer-content">
                 <p>&copy; 2026 Diana Laura Davila Esparza | Student ID: 52534367</p>
                 <p class="assessment-tag">CS551P: Advanced Programming Assessment</p>
-        </footer>
+        
+            </div> </footer>
     </body>
 </html>

@@ -1,5 +1,6 @@
 import os 
 import sqlite3
+import pandas as pd
 from flask import Flask, render_template
 from dotenv import load_dotenv
 
@@ -22,6 +23,7 @@ app = Flask(__name__)
 #App routing for mapping the URLS to a specific function that will handle the logic for that URL. 
 # In our application, the URL ('/') means the home page
 @app.route('/')
+
 #HOME PAGE LOGIC (lIST VIEW)
 def index():
     #Stablish connection with data base function helper. 
@@ -32,8 +34,30 @@ def index():
     rows = conn.execute("SELECT * from incidents").fetchall()
     #Terminates the connection 
     conn.close()
-    #Passes the data to 'index.html' and renders the page in the browser
-    return render_template('index.html', rows=rows)
+
+    #----GLOBAL DATA ANALYSIS ----
+    #Read Data Base path into a data frame (df) so its readable with pandas library (as 2 dimensional data structure)
+    df = pd.read_sql_query("SELECT * FROM incidents", sqlite3.connect(db_path))
+    #Calculate total financial loss
+    total_loss_raw = df['Financial_Loss_inMillion$'].sum()
+    if total_loss_raw >= 1000:
+        total_loss = f"${round(total_loss_raw/1000,2)} USD Billions"
+    else:
+        total_loss = f"${round(total_loss_raw,2)} USD Millions"
+    
+    #Identify the threat (attack_type) more frecuent
+    #df['Attack_Type'] python grab the big table (df) and grab only the column "Attack_Type"
+    primary_threat = df['Attack_Type'].mode()[0]
+
+    #Count total records
+    total_incidents = len(df)
+
+    #Passes the data to 'index.html' 
+    return render_template('index.html', 
+                           rows=rows,
+                           total_loss=total_loss,
+                           primary_threat = primary_threat, 
+                           total_incidents = total_incidents)
 
 #MAIN TEMPLATE LAYOUT (index & detail to plug into)
 #<int:incident_id define ID as int variable, called 'incident_id'
@@ -55,8 +79,6 @@ def detail(incident_id):
     
     #Send the specific record to the detail page 
     return render_template('detail.html', incident=incident)
-
-
 
 #EXECUTION CONTROL
 #Ensures app.py acts as a resusable module. This allows other tools such as tests.py
