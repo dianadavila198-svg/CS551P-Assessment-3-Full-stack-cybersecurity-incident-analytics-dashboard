@@ -1,1 +1,41 @@
 <!--Individual data record review-->
+
+<!--NINJA DELIMETERS (To separate logic from presentation)-->
+<!--Template inheritance from base.html (Playing as main template layout)-->
+<!--Goes to 'base.html' to get header,navbar and footer -->
+{% extends 'base.html' %}
+<!--Opens where the specific page content will go -->
+{% block content %}
+
+<div class="container">
+    <a href="/"> ← Back to Dashboard</a>
+
+    <h1>Incident Report: #{{ incident ['Incident_ID']}} </h1>
+
+    <div class="detail-card">
+        <h3>General Information</h3>
+        <p><strong>Country:</strong> {{ incident ['Country']}}</p>
+        <p><strong>Year:</strong> {{ incident ['Year']}}</p>
+        <p><strong>Target Industry:</strong> {{ incident ['Target_Industry']}}</p>
+
+        <hr>
+
+        <h3>Technical Analysis</h3>
+        <p><strong>Attack Type:</strong>{{ incident ['Attack_Type'] }}</p>
+        <p><strong>Security Vunlerability:</strong>{{ incident ['Security_Vulnerability_Type'] }}</p>
+        <p><strong>Attack Source:</strong>{{ incident ['Attack_Source'] }}</p>
+        <p><strong>Defense Mechanism:</strong>{{ incident ['Defense_Mechanism_Used'] }}</p>
+
+        <hr>
+
+        <h3>Impact Assessment</h3>
+        <p><strong>Financial Loss:</strong>{{ incident ['Financial_Loss_inMillion$'] }} Million</p>
+        <p><strong>Users Affected:</strong>{{ incident ['Qty_Affected_Users'] }}</p>
+        <p><strong>Resolution Time:</strong>{{ incident ['Incident_Resolution_Time_inHours'] }}</p>
+    </div>
+
+</div>
+
+<!--NINJA DELIMETERS-->
+<!--Finish boundary for page content, (inheritance and scope). Ensuring modular integrity of the templates)  -->
+{% endblock %}

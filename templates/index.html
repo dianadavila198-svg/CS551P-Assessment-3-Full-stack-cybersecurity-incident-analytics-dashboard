@@ -1,1 +1,47 @@
 <!--data visualization-->
+
+<!--NINJA DELIMETERS (To separate logic from presentation)-->
+<!--Template inheritance from base.html (Playing as main template layout)-->
+<!--Goes to 'base.html' to get header,navbar and footer -->
+{% extends 'base.html' %}
+<!--Opens where the specific page content will go -->
+{% block content %}
+
+<div  class = "container">
+    <h1>Cybersecurity Incident Dashboard</h1>
+    <p>Showing the latest recorded global cyber attacks</p>
+
+    <table border="1">
+        <!--Definition of titles of the columns -->
+        <thead>
+            <tr>
+                <th>Year</th>            <th>Country</th>         <th>Attack Type</th>     <th>Target Industry</th> <th>Loss ($M)</th>       <th>Actions</th>         </tr>
+        </thead>
+        <tbody>
+            <!--NINJA DELIMETERS-->
+            <!--Loop into the rows variable received from 'app.py' -->
+            {% for row in rows %}
+            <!--it creates a new <tr> (table row) for every incindent in the data base -->
+            <tr>
+                <!--Columns of SQLite Data Base -->
+                <!--Created data visualization in an optimized way for User Experience -->
+                <td>{{ row['Year'] }}</td>
+                <td>{{ row['Country'] }}</td>
+                <td>{{ row['Attack_Type'] }}</td>
+                <td>{{ row['Target_Industry'] }}</td>
+                <!--($) to make it look like currency data-->
+                <td>${{ row['Financial_loss_inMillion$'] }}</td>
+                <td>
+                    <!--Action link for end user for incident details-->
+                    <a href="/incident/{{ row['Incident_ID'] }}">View Details</a>
+                </td>
+            </tr>
+            <!--NINJA DELIMETERS-->
+            <!--Loop closure (flow control). Ensuring modular integrity of the templates) -->
+            {%  endfor %}
+        </tbody>
+    </table>
+</div>
+<!--NINJA DELIMETERS-->
+<!--Finish boundary for page content, (inheritance and scope). Ensuring modular integrity of the templates)  -->
+{% endblock %}

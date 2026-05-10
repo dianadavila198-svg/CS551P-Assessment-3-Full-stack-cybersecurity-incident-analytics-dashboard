@@ -1,1 +1,31 @@
 <!--Skeleton Layout-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Connect with CSS for web page design -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <title>Cyber Incident Dashboard</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+
+        <main>
+            <!--Opens where the specific page content will go -->
+            {% block content %}
+            <!--NINJA DELIMETERS-->
+            <!--Finish boundary for page content, (inheritance and scope). Ensuring modular integrity of the templates)  -->
+            {% endblock %}
+        </main>
+
+        <!-- More professional visualization of footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Diana Laura Davila Esparza | Student ID: 52534367</p>
+                <p class="assessment-tag">CS551P: Advanced Programming Assessment</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+/* --- GLOBAL TYPOGRAPHY FOR ALL BROWSERS--- 
+Ensures the page looks the same across all browsers */
+
+/* --- Calibration --- */
+* {
+    margin: 0;            /* Removes default outer spacing from all elements */
+    padding: 0;           /* Removes default inner spacing from all elements */
+    box-sizing: border-box; /* Keeps element widths consistent even with padding */
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column; /* Stacks content from top to bottom */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Text clean */
+    background-color: #f4f7f9; /* Sets the soft grey-blue page background */
+    color: #333;               /* Sets the default text color to dark grey */
+}
+
+/* --- LAYOUT CONTAINER ---
+centers content and prevents it from stretching on monitors--- */
+
+.container {
+    flex: 1; /*to fill empty space */
+    width: 95%;     
+    max-width: 1200px;    
+    margin: 20px auto;    /* Centers the box on the screen */
+    background: white;    /* Creates a clean white paper look for content */
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    border-radius: 8px;   /* Rounds the corners of the main container */
+}
+
+/* --- DASHBOARD TABLE STYLING--- */
+table {
+    width: 100%;          /* Makes the table stretch to fill the container */
+    border-collapse: collapse; /* Removes the double-border look from cells */
+}
+
+th {
+    background-color: #2c3e50; /* Professional dark blue for headers */
+    color: white;              /* White text for better contrast on dark blue */
+    padding: 12px;             /* Adds vertical space inside header cells */
+    text-align: left;
+}
+
+td {
+    padding: 10px;             /* Adds breathing room for the data in cells */
+    border-bottom: 1px solid #ddd; /* Adds a light line between rows */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Highlights a row when you point at it */
+}
+
+/* --- VISUALIZATION FOR detail.html --- 
+view for an specific incident report--- */
+.detail-card {
+    border: 1px solid #e0e0e0; /* Subtle grey border around the report */
+    padding: 30px;             /* Large inner padding for a clean feel */
+}
+
+.detail-card h3 {
+    border-left: 5px solid #2980b9; /* Adds a blue vertical bar for style */
+    padding-left: 10px;             /* Spaces text away from that blue bar */
+    margin: 20px 0 10px 0; /*Spacing, top, right, botton, left */
+}
+
+.detail-card p {
+    margin-bottom: 10px; /* Adds space between data lines */
+}
+
+hr {
+    margin: 20px 0; /* Pushes content away from the line (Top/Bottom) */
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* --- BUTTONS AND LINKS --- 
+ makes actions look as interactive elements--- */
+a {
+    text-decoration: none;      /* Removes the underline */
+    color: #3498db;             /* Makes the text blue */
+    font-weight: bold;          /* Makes the text thicker/stronger */
+}
+
+a:hover {
+    color: #2c3e50;             /* Changes to dark blue when the user point at it */
+    text-decoration: underline; /* Brings back the underline only when pointing */
+}
+
+/* --- CLEAN FOOTER VISUALIZATION--- */
+.site-footer {
+    background-color: #2c3e50;  /* Colors the bottom bar dark blue */
+    color: #ecf0f1;             /* Makes the text inside almost white */
+    padding: 30px 0;            /* Makes the footer taller (inner space) */
+    margin-top: 50px;           /* Pushes the footer down away from the table */
+    text-align: center;         /* Puts the text in the middle */
+    border-top: 4px solid #3498db; /* Adds a thick blue stripe on the very top edge */
+}
+
+.footer-content p {
+    margin: 5px 0;              /* Adds a tiny gap between the lines of text */
+}
+
