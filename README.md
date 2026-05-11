@@ -28,8 +28,8 @@ The project uses a modular approach to separate logic, structure, and design:
 Important!**the application is hosted on a free tier and may require 30–60 seconds to "wake up" on the first visit due to render server sleep mode while not traffic. Render shows clearly while the application is loading. 
 
 ### Option 2. Execute the program locally on your machine
-### Pre-requisites install on your machine:
-1) Ensure you have Python 3 installed on your machine. 
+### Pre-requisites (on local machine)
+1) Ensure you have Python 3 installed
 2) Create and activate a virtual environment (optional but recommended).
 2) Download the project folder & unzip it. (Make sure all files, including the SQLite database, remain in the same folder).
 3) Open your terminal or command prompt and navigate to the project directory.
