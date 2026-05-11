@@ -115,7 +115,12 @@
                        {%  endfor %}
                     </tbody>
                 </table>
-            </div>
-                 <!--NINJA DELIMETERS-->
-                 <!--Finish boundary for page content, (inheritance and scope). Ensuring modular integrity of the templates)  -->
-                 {% endblock %}
+
+<div class="history-link-container">
+                    {% if not show_all %}
+                        <a href="/?all=true" class="btn-history">View All Historical Records (3,000+) &rarr;</a>
+                    {% else %}
+                        <a href="/" class="btn-history">&larr; Back to Top 10 Dashboard</a>
+                    {% endif %}
+                </div>
+            </div> </div> {% endblock %}

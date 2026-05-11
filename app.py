@@ -2,7 +2,7 @@
 import os 
 import sqlite3
 import pandas as pd
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
 #Load dynamic configuration from .env
@@ -21,7 +21,6 @@ def get_db_connection():
 #Initialize app 
 app = Flask(__name__)
 
-
 #----HOME PAGE LOGIC (lIST VIEW)----
 
 #App routing for mapping the URLS to a specific function that will handle the logic for that URL. 
@@ -30,15 +29,24 @@ app = Flask(__name__)
 def index():
     #Stablish connection with data base with function helper. 
     conn = get_db_connection()
-    # (DESC LIMIT 10) Select the top 10 incidents sorted by Year and Financial loss
-    sql_top_10= "SELECT * FROM incidents ORDER BY Year DESC, [Financial_Loss_inMillion$] DESC LIMIT 10"
+
+    #---HISTORICAL DATA VISUALIZATION 3,000 RECORDS---
+    show_all = request.args.get('all', 'false') == 'true'
+    if show_all:
+        #Show everything if the user clicked the link
+        sql_query = "SELECT * FROM incidents ORDER BY Year DESC"
+
+    #----DATA ANALYSIS ----
+    else:
+        #Otherwise, (DESC LIMIT 10) Select the top 10 incidents sorted by Year and Financial loss
+        sql_query = "SELECT * FROM incidents ORDER BY Year DESC, [Financial_Loss_inMillion$] DESC LIMIT 10"
+
     #Grabs all matching records and stores them in the 'rows' variable
     #Run 'execute' directly so SQLite creates internally a temporary cursor 
-    rows = conn.execute(sql_top_10).fetchall()
+    rows = conn.execute(sql_query).fetchall()
     #Close connection after finding rows
     conn.close()
 
-    #----DATA ANALYSIS ----
     #Load the incidents table into a DataFrame for data analysis with pandas lirary
     #Read Data Base path into a data frame (df) so its readable with pandas library (as 2 dimensional data structure)
     analysis_global = sqlite3.connect(db_path)
@@ -75,10 +83,10 @@ def index():
     col_time: 'mean'
     }).sort_values(col_loss, ascending=False).head(6).to_dict('index')
 
-    #Get top 5 countries with the highest total financial loss
+    #Get top 10 countries with the highest total financial loss
     #.sort_values() organize the results, showing from the lowest average loss to the highest
     #.to_dict() for easier readiness for HTML templates in python dictionary
-    country_stats = df_incidents.groupby('Country')['Financial_Loss_inMillion$'].sum().sort_values().to_dict()
+    country_stats = df_incidents.groupby('Country')['Financial_Loss_inMillion$'].sum().sort_values(ascending=False).to_dict()
 
      
     #---DASHBOARD VISUALIZATION---
@@ -108,6 +116,7 @@ def index():
     #Send all variables to 'index.html' 
     return render_template('index.html', 
                            rows=rows,
+                           show_all = show_all,
                            total_loss=total_loss,
                            primary_threat = primary_threat, 
                            secondary_threat = secondary_threat,
