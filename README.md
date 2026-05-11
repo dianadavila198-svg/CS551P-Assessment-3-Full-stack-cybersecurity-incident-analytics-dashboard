@@ -18,17 +18,17 @@ Git Hub : A connection with GitHub was established to facilitate version control
 The project uses a modular approach to separate logic, structure, and design:
 
 1) Python: Core logic implementing Object-Oriented Programming (OOP) and Flask routing.
-2) HTML (Jinja2): Dynamic front-end templates utilizing the Jinja2 engine for data rendering.
+2) HTML (Jinja): Dynamic front-end templates utilizing the Jinja engine for data rendering.
 3) CSS: Custom stylesheets designed to provide a professional, responsive user interface for the dashboard.
 
 ## 5. HOW TO START?
-# Option 1. Access Online
+### Option 1. Access Online
 1) URL live app: https://cs551p-assessment-3-cybersecurity.onrender.com/
 
 Important!**the application is hosted on a free tier and may require 30–60 seconds to "wake up" on the first visit due to render server sleep mode while not traffic. Render shows clearly while the application is loading. 
 
-# Option 2. Execute the program locally on your machine
-# Pre-requisites install on your machine:
+### Option 2. Execute the program locally on your machine
+### Pre-requisites install on your machine:
 1) Ensure you have Python 3 installed on your machine. 
 2) Create and activate a virtual environment (optional but recommended).
 2) Download the project folder & unzip it. (Make sure all files, including the SQLite database, remain in the same folder).
@@ -40,20 +40,20 @@ Important!**the application is hosted on a free tier and may require 30–60 sec
 ## 6. END USER NAVIGATION
 The application is developed to transition seamless from global high level data analysis to granular record visualization. Below is the navigation path to follow for better visualization of app functionality:
 
-# Home View (Summary data analysis)
+### Home View (Summary data analysis)
 1) The home page instantly pulls from the SQLite database to show the Global Financial Impact and the total number of records.
 
 2) Custom charts (built with Flask and CSS) compare Defense vs. Attack Type efficiency and highlight the Top 10 Countries by financial loss. This view represent the more complex view of all analysis, merging different tables in the data base with SQL JOIN. 
 
 3) Critical Recent Incidents to keep the interface showing the top lately incidents. 
 
-# Historical View 
+### Historical View 
 1) Clicking "View All Historical Records" uses a URL parameter (?all=true),hiding the charts and expanding the table to show the full 3,000+ record history.
 
-# Granular Visualization (Incident Details)
+### Granular Visualization (Incident Details)
 1) Under "Actions" in "Critical Recent Incidents" click on "View Details" to view granular incident details. Here the data is fixed from the data set, separated by different card visualizators "General Information", "Technical Anlaysis" and "Impact Assessment" taking different fields across the main table for granular visualization. 
 
-# Navigation Buttons
+### Navigation Buttons
 Navigation buttons are placed at the top of every table and detail page, allowing to jump back to the main dashboard, to the granular & historical view. 
 
 ## 7. TESTS
