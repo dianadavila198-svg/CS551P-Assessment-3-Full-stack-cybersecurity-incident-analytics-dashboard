@@ -77,10 +77,23 @@
             </ul>
         </div>
     </div>
+    <!--NINJA DELIMETERS-->
+    <!--Exit this view in case of historical/Home view instead -->
     {% endif %}
 
     <div class="table-section">
-        <h3>Critical Recent Incidents</h3>
+
+        <div class="history-link-container" style="margin-bottom: 20px;">
+            {% if not show_all %}
+                <a href="/?all=true" class="btn-history">View All Historical Records (3,000+) &rarr;</a>
+            {% else %}
+                <a href="/" class="btn-history">&larr; Back to Top 10 Dashboard</a>
+            <!--NINJA DELIMETERS-->
+            <!--Exit this view in case of historical/Home view instead -->
+            {% endif %}
+        </div>
+
+        <h3>{% if show_all %}Full Historical Database{% else %}Critical Recent Incidents{% endif %}</h3>
         <!--Columns titles -->
         <table>
             <thead>
@@ -118,12 +131,5 @@
                        {%  endfor %}
                     </tbody>
                 </table>
+            </div></div> {% endblock %}
 
-<div class="history-link-container">
-                    {% if not show_all %}
-                        <a href="/?all=true" class="btn-history">View All Historical Records (3,000+) &rarr;</a>
-                    {% else %}
-                        <a href="/" class="btn-history">&larr; Back to Top 10 Dashboard</a>
-                    {% endif %}
-                </div>
-            </div> </div> {% endblock %}
