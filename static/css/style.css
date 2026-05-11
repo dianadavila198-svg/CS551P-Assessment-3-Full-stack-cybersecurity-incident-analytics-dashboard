@@ -40,12 +40,12 @@ centers content and prevents it from stretching on monitors--- */
 .container h1 {
     font-size: 2.5rem;       /* Makes the title significantly bigger */
     margin-bottom: 5px;      /* Small gap between title and subtitle */
-    color: #2c3e50;          
+    color: #2c3e50;         
 }
 
 .container p {
     font-size: 1.1rem;       /* Makes the subtitle bigger */
-    color: #7f8c8d;          /* A lighter grey for the subtitle */
+    color: #2c3e50;      
     margin-bottom: 30px;     /* separate text from the table */
 }
 
@@ -123,7 +123,7 @@ a:hover {
 }
 
 /* --- NAVIGATION BAR --- 
-Acts as the housing for your Home link at the top of the page */
+Acts as the housing for the Home link at the top of the page */
 .navbar {
     background-color: #2c3e50; /* Dark blue background for the top bar */
     padding: 10px 20px;        /* Space inside the bar */
@@ -135,7 +135,7 @@ Acts as the housing for your Home link at the top of the page */
     display: inline-block;     
     font-size: 1.5rem;         /* Makes it big and title-like */
     font-weight: 800;          /* Bold brand look */
-    color: #ffffff !important; /* Forces it to be white so it pops on dark blue */
+    color: #ffffff !important; /* Forces it to be white for better visualization */
     text-decoration: none;     /* Removes the blue link underline */
     letter-spacing: 1px;
 }
@@ -159,10 +159,15 @@ Acts as the housing for your Home link at the top of the page */
     background: #ffffff;      /* Clean white background */
     padding: 25px;
     border-radius: 12px;     /* roun corners */
+    display: flex;             /* Makes the card a flex container */
+    flex-direction: column;    /* Stacks content vertically */
+    align-items: center;       /* Centers items horizontally */
+    justify-content: center;   /* Centers items vertically */
     text-align: center;
     border: 1px solid #eef2f3; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
     transition: transform 0.3s ease; 
+
 }
 
 .stat-card:hover {
@@ -172,9 +177,8 @@ Acts as the housing for your Home link at the top of the page */
 
 /*For titles */
 .stat-card h3 {
-    font-size: 0.85rem;
-    color: #7f8c8d;          
-    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #2c3e50;         
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
@@ -182,6 +186,95 @@ Acts as the housing for your Home link at the top of the page */
 /* 5. The Large Numbers (The Data) */
 .stat-value {
     font-size: 1.8rem;
-    font-weight: 800;        /* Thick, bold numbers like a real dashboard */
-    color: #2c3e50;          /* Matches your site's dark blue theme */
+    font-weight: 800;        /* Bold numbers */
+    color: #2c3e50;          /* Deep Navy/Grey color */
 }
+
+/* --- ANALYSIS GRID & BAR CHARTS --- 
+handle the deep analysis visuals below the stats cards */
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* 60% chart, 40% list */
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.grid-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+/* Custom CSS Bar Chart */
+.chart-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chart-label { 
+    width: 90px; 
+    font-size: 0.85rem; 
+    font-weight: bold; 
+}
+
+.bar-track { 
+    flex-grow: 1; 
+    background: #f1f1f1; 
+    height: 14px; 
+    border-radius: 7px; 
+    margin: 0 12px; 
+    overflow: hidden; /* Keeps the fill inside the rounded corners */
+}
+
+.bar-fill { 
+    height: 100%; 
+    background: #3498db; 
+    border-radius: 7px; 
+}
+
+.chart-val { 
+    font-size: 0.85rem; 
+    color: #2c3e50; 
+    min-width: 50px; 
+    text-align: right; 
+}
+
+/* Analysis List (Defense Efficiency) */
+.analysis-list { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.analysis-list li { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 12px 0; 
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.tag-loss { 
+    font-weight: 800; 
+    color: #e74c3c; /* Red for financial impact */
+}
+
+/* Top 3 List in the Stats Cards */
+.threat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /*full width for centering */
+    text-align: center;
+}
+
+.threat-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #2c3e50;
+    font-weight: 800;
+}
+
+
