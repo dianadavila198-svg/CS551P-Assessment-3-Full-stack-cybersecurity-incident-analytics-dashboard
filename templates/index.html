@@ -44,7 +44,7 @@
                 <div class="chart-line">
                     <span class="chart-label">{{ country }}</span>
                     <div class="bar-track">
-                        <div class="bar-fill" style="width: {{ (loss / 500) * 100 }}%;"></div>
+                        <div class="bar-fill" style="width: {{ (loss / country_stats.values()|max) * 100 }}%;"></div>
                     </div>
                     <span class="chart-val">${{ "%.0f"|format(loss) }}M</span>
                 </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="grid-item">
-            <h3>Avg. Loss & Defense Mechanism</h3>
+            <h3>Defense Mechanism & Avg. Loss </h3>
             <ul class="analysis-list">
                 {% for defense, avg in defense_stats.items() %}
                 <li>{{ defense }} <span class="tag-loss">${{ "%.1f"|format(avg) }}M</span></li>

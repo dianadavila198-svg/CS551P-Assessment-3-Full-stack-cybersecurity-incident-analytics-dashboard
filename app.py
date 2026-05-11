@@ -61,7 +61,7 @@ def index():
     #.mean() to calculate the average loss for each defense type
     #.sort_values() organize the results, showing from the lowest average loss to the highest
     #.to_dict() for easier readiness for HTML templates in python dictionary
-    defense_stats = df_merged.groupby('Defense_Mechanism_Used')['Financial_Loss_inMillion$'].mean().sort_values().to_dict()
+    defense_stats = df_merged.groupby('Defense_Mechanism_Used')['Financial_Loss_inMillion$'].mean().sort_values(ascending=False).to_dict()
 
     #Get top 5 countries with the highest total financial loss
     #.sort_values() organize the results, showing from the lowest average loss to the highest
