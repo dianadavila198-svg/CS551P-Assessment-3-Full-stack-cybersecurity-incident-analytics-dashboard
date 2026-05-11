@@ -38,7 +38,7 @@
     </div>
     <div class="analysis-grid">
         <div class="grid-item">
-            <h3>Top 5 Countries by Total Loss</h3>
+            <h3>Top 10 Countries by Total Loss</h3>
             <div class="bar-chart">
                 {% for country, loss in country_stats.items() %}
                 <div class="chart-line">
@@ -52,10 +52,25 @@
             </div>
         </div>
         <div class="grid-item">
-            <h3>Defense Mechanism & Avg. Loss </h3>
+            <h3>Efficiency: Defense vs. Attack Type</h3>
             <ul class="analysis-list">
-                {% for defense, avg in defense_stats.items() %}
-                <li>{{ defense }} <span class="tag-loss">${{ "%.1f"|format(avg) }}M</span></li>
+                <!--keys[0] is the Defense and keys[1] is the Attack Type-->
+                {% for keys, stats in performance_stats.items() %}
+                <li>
+                    <div class = "defense-info">
+                        <strong class="defense-name">{{ keys[0] }}</strong>
+                        <small class="attack-tag">vs. {{ keys[1] }}</small>
+                        <br>
+                        <small class="resolution-time">
+                            <!--  -->
+                            Avg. Resolution: {{ "%.1f"|format(stats.values()|list|last) }} hrs
+                        </small>
+                    </div>
+                    <span class="tag-loss">
+                        <!--  -->
+                        ${{ "%.1f"|format(stats.values()|list|first) }}M
+                    </span>
+                </li>
                 {% endfor %}
             </ul>
         </div>

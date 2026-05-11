@@ -56,12 +56,24 @@ def index():
     #left_on=,right_on= specifies in what level to do the merging on the DataFrame to the left-right.
     df_merged = df_incidents.merge(df_attacks, left_on='Attack_typeID', right_on='Type_ID')
 
-    #Calculate average loss for each defense mechanism
+    #Calculate average loss and Average Resolution per Defense Used with Attack type.
     #convert it into a dicionary for HTML template readiness
     #.mean() to calculate the average loss for each defense type
     #.sort_values() organize the results, showing from the lowest average loss to the highest
     #.to_dict() for easier readiness for HTML templates in python dictionary
-    defense_stats = df_merged.groupby('Defense_Mechanism_Used')['Financial_Loss_inMillion$'].mean().sort_values(ascending=False).to_dict()
+    #agg as aggregate. Enable to run multiple different calculations
+    #'mean' for average value calculation
+    # Find the colum names to avoid key errors, looking by keywords.
+    col_loss = [c for c in df_merged.columns if 'Financial_Loss' in c][0]
+    col_time = [c for c in df_merged.columns if 'Resolution_Time' in c][0]
+    col_attack = [c for c in df_merged.columns if 'Attack' in c and 'ID' not in c][0]
+    col_defense = [c for c in df_merged.columns if 'Defense' in c and 'ID' not in c][0]
+
+    #Run multi-Dimensional Analysis using the found names
+    performance_stats = df_merged.groupby([col_defense, col_attack]).agg({
+    col_loss: 'mean',
+    col_time: 'mean'
+    }).sort_values(col_loss, ascending=False).head(6).to_dict('index')
 
     #Get top 5 countries with the highest total financial loss
     #.sort_values() organize the results, showing from the lowest average loss to the highest
@@ -101,7 +113,7 @@ def index():
                            secondary_threat = secondary_threat,
                            third_threat = third_threat,
                            total_incidents = total_incidents,
-                           defense_stats = defense_stats,
+                           performance_stats = performance_stats,
                            country_stats = country_stats)
 
 #MAIN TEMPLATE LAYOUT (index & detail to plug into)
