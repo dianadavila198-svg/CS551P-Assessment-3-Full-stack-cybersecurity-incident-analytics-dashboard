@@ -80,6 +80,31 @@ test_app.py::test_incident_detail_loads PASSED
 3) Relational Schema connection & Normalized tables. A draft in paper was done before the start of code for data upload. 
 3) Component Architecture: Logic was separated into appropriate files to ensure maintainability.
 
+## APPLICATION FILES ARQUITECTURE
+
+│
+├── instance/               # Database storage 
+│   └── cyber_data.db       # SQLite database file
+│
+├── static/                 # CSS
+│   └── style.css           # Web Page Styling
+│
+├── templates/              # HTML files
+│   ├── base.html           # "Master" layout (Composite template)
+│   ├── index.html          # Main dashboard
+│   └── detail.html         # Individual record view
+│
+├── venv/                   # Virtual Environment 
+│
+├── .env                    # Secret configurations 
+├── .gitignore              # Tells Git what to ignore 
+├── app.py                  # The main Flask application controller
+├── db_import.py            # Script to load CSV to SQL 
+├── incidents.csv           # Raw open data source 
+├── requirements.txt        # List of libraries needed to execute the program (Flask, Pandas, etc.)
+├── README.md               # Documentation 
+└── tests.py                # Unit tests to validate app proper functionality 
+
 ## 9. GIT HUB DOCUMENTATION
 Refer to the below link for more detail on project construction, commits, and code push on git hub cloud. https://github.com/dianadavila198-svg/CS551P-Assessment-3
 
