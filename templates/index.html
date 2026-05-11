@@ -11,6 +11,8 @@
 <div  class = "container">
     <h1>Cybersecurity Incident Dashboard</h1>
     <p>Showing the latest recorded global cyber attacks (2019-2024)</p>
+    <!--for disctintion betweenhome menu and historical -->
+    {% if not show_all %}
 
     <!--Data analysis visualization-->
     <!-- (stats-container) put information in a row -->
@@ -75,6 +77,7 @@
             </ul>
         </div>
     </div>
+    {% endif %}
 
     <div class="table-section">
         <h3>Critical Recent Incidents</h3>
