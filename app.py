@@ -60,17 +60,11 @@ def index():
         df_attacks = pd.read_csv('attack_types.csv')
 
     #---TABLE JOINNIN---
-    #Join incidents with attack_types using incident ID colum (primary key)
+    #Join incidents with attack_types using incident ID column (primary key)
     #left_on=,right_on= specifies in what level to do the merging on the DataFrame to the left-right.
     df_merged = df_incidents.merge(df_attacks, left_on='Attack_typeID', right_on='Type_ID')
 
     #Calculate average loss and Average Resolution per Defense Used with Attack type.
-    #convert it into a dicionary for HTML template readiness
-    #.mean() to calculate the average loss for each defense type
-    #.sort_values() organize the results, showing from the lowest average loss to the highest
-    #.to_dict() for easier readiness for HTML templates in python dictionary
-    #agg as aggregate. Enable to run multiple different calculations
-    #'mean' for average value calculation
     # Find the colum names to avoid key errors, looking by keywords.
     col_loss = [c for c in df_merged.columns if 'Financial_Loss' in c][0]
     col_time = [c for c in df_merged.columns if 'Resolution_Time' in c][0]
@@ -78,6 +72,7 @@ def index():
     col_defense = [c for c in df_merged.columns if 'Defense' in c and 'ID' not in c][0]
 
     #Run multi-Dimensional Analysis using the found names
+    #'mean' for average value calculation
     performance_stats = df_merged.groupby([col_defense, col_attack]).agg({
     col_loss: 'mean',
     col_time: 'mean'
@@ -90,7 +85,7 @@ def index():
 
      
     #---DASHBOARD VISUALIZATION---
-    #Summarize total financial loss 
+    #---TOTAL FINANCIAL LOSS ---
     total_loss_raw = df_incidents['Financial_Loss_inMillion$'].sum()
     #Format the number as billions or millions for easier user readiness
     if total_loss_raw >= 1000:
@@ -98,21 +93,18 @@ def index():
     else:
         total_loss = f"${round(total_loss_raw,2)} USD Millions"
     
-    #Find the top 3 most common type of attacks
+    #---TOP 3 MOST COMMON TYPE OF ATTACKS ---
     #.head(3) to keep only the top 3 values
     #tolist() to convert it into a list for easier readiness
     top_3 = df_incidents['Attack_Type'].value_counts().head(3).index.tolist()
-
-    #['Attack_Type'] python grab the incidents table and grab only the column "Attack_Type"
     #Add else "N/A" for error handling
     primary_threat = top_3[0] if len(top_3) > 0 else "N/A"
     secondary_threat = top_3[1] if len(top_3) > 1 else "N/A"
     third_threat = top_3[2] if len(top_3) > 2 else "N/A"
 
-    #Count total number of rows in the dataset
+    #---TOTAL RECORDS ON DATA BASE---
     total_incidents = len(df_incidents)
 
-    #---RENDER TEMPLATE ---
     #Send all variables to 'index.html' 
     return render_template('index.html', 
                            rows=rows,

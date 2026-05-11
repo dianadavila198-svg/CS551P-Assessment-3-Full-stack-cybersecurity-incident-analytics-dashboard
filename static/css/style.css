@@ -183,7 +183,6 @@ Acts as the housing for the Home link at the top of the page */
     margin-bottom: 15px;
 }
 
-/* 5. The Large Numbers (The Data) */
 .stat-value {
     font-size: 1.8rem;
     font-weight: 800;        /* Bold numbers */

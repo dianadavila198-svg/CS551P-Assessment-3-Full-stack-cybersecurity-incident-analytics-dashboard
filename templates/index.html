@@ -14,7 +14,7 @@
     <!--for disctintion betweenhome menu and historical -->
     {% if not show_all %}
 
-    <!--Data analysis visualization-->
+    <!-- Top Data analysis visualization-->
     <!-- (stats-container) put information in a row -->
     <div class="stats-container">
         <!-- (stat-card) creates a white box look -->
@@ -60,6 +60,7 @@
                 {% for keys, stats in performance_stats.items() %}
                 <li>
                     <div class = "defense-info">
+                        <!--keys[0] is the Defense and keys[1] is the Attack Type-->
                         <strong class="defense-name">{{ keys[0] }}</strong>
                         <small class="attack-tag">vs. {{ keys[1] }}</small>
                         <br>
@@ -83,6 +84,7 @@
 
     <div class="table-section">
 
+        <!--HYSTORICAL DATA VIEW-->
         <div class="history-link-container" style="margin-bottom: 20px;">
             {% if not show_all %}
                 <a href="/?all=true" class="btn-history">View All Historical Records (3,000+) &rarr;</a>
