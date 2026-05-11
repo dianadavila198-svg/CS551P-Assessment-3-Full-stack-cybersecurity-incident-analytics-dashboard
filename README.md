@@ -96,7 +96,7 @@ test_app.py::test_incident_detail_loads PASSED
 │
 ├── venv/                   # Virtual Environment 
 │
-├── .env                    # Secret configurations 
+├── .env                    # Configurations 
 ├── .gitignore              # Tells Git what to ignore 
 ├── app.py                  # The main Flask application controller
 ├── db_import.py            # Script to load CSV to SQL 
