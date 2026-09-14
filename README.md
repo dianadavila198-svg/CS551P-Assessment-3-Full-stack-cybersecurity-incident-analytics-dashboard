@@ -101,8 +101,9 @@ test_app.py::test_incident_detail_loads PASSED
 ├── requirements.txt         # List of libraries needed to execute program
 ├── README.md                # Documentation 
 └── tests.py                 # Unit tests to validate app proper functionality
+```
 
-10. GIT HUB DOCUMENTATION
+## 10. GIT HUB DOCUMENTATION
 Refer to the below link for more detail on project construction, commits, and code push on git hub cloud. https://github.com/dianadavila198-svg/CS551P-Assessment-3
 
 ## ADDITIONAL NOTES
